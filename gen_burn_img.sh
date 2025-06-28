@@ -1,5 +1,4 @@
 #!/bin/bash
-# sudo apt-get install img2simg
 ./AmlImg unpack ./uboot.img burn/
 gzip -dk bin/targets/*/*/*.gz
 
