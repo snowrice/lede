@@ -1,9 +1,9 @@
 #!/bin/bash
-sudo apt-get install img2simg
+# sudo apt-get install img2simg
 ./AmlImg unpack ./uboot.img burn/
-gzip -dk openwrt/bin/targets/*/*/*.gz
+gzip -dk bin/targets/*/*/*.gz
 
-diskimg_path="openwrt/bin/targets/*/*/*.img"
+diskimg_path="bin/targets/*/*/*.img"
 boot_img_name="openwrt.img"
 boot_img_mnt="xd"
 rootfs_img_mnt="img"
@@ -18,7 +18,7 @@ if [ -z "$loop" ]; then
   exit 1
 fi
 
-dd if=/dev/zero of="${boot_img_name}" bs=1M count=600 status=progress
+dd if=/dev/zero of="${boot_img_name}" bs=1M count=800 status=progress
 if [ $? -ne 0 ]; then
   echo "Error: Failed to create boot image."
   exit 1
